@@ -9,278 +9,119 @@ local LP = Players.LocalPlayer
 local CHILLI = "https://raw.githubusercontent.com/tienkhanh1/spicy/main/Chilli.lua"
 local LOGO = "https://cdn.upanhlaylink.com/i/l0hK1aFq.png"
 
-local T = {
-    ["Chilli Hub"] = "TLN CHEAT",
-    ["ChilliHub"] = "TLN CHEAT",
-    ["Chilli"] = "TLN CHEAT",
-    ["Farm"] = "Cày",
-    ["Player"] = "Người Chơi",
-    ["Players"] = "Người Chơi",
-    ["Predictor"] = "Dự Đoán",
-    ["Prediction"] = "Dự Đoán",
-    ["Progress"] = "Tiến Độ",
-    ["Server"] = "Server",
-    ["Misc"] = "Khác",
-    ["Extra"] = "Thêm",
-    ["Main"] = "Chính",
-    ["Home"] = "Trang Chủ",
-    ["Auto Hop"] = "Tự Động Chuyển",
-    ["AutoHop"] = "Tự Động Chuyển",
-    ["Admin Abuse"] = "Quyền Admin",
-    ["AdminAbuse"] = "Quyền Admin",
-    ["Discord"] = "Discord",
-    ["Quick & Keys"] = "Phím Tắt",
-    ["Quick & Key"] = "Phím Tắt",
-    ["QuickBar"] = "Thanh Nhanh",
-    ["Quick Bar"] = "Thanh Nhanh",
-    ["Settings"] = "Cài Đặt",
-    ["Config"] = "Cấu Hình",
-    ["Options"] = "Tùy Chọn",
-    ["Option"] = "Tùy Chọn",
-    ["Scripts"] = "Script",
-    ["Script"] = "Script",
-    ["AutoSteal"] = "Tự Động Trộm",
-    ["Auto Steal"] = "Tự Động Trộm",
-    ["AutoCollect"] = "Tự Động Thu",
-    ["Auto Collect"] = "Tự Động Thu",
-    ["AutoFarm"] = "Tự Động Cày",
-    ["Auto Farm"] = "Tự Động Cày",
-    ["AutoEgg"] = "Tự Động Trứng",
-    ["Auto Egg"] = "Tự Động Trứng",
-    ["AutoSell"] = "Tự Động Bán",
-    ["Auto Sell"] = "Tự Động Bán",
-    ["AutoBuy"] = "Tự Động Mua",
-    ["Auto Buy"] = "Tự Động Mua",
-    ["AutoAttack"] = "Tự Động Đánh",
-    ["Auto Attack"] = "Tự Động Đánh",
-    ["AutoPet"] = "Tự Động Thú Cưng",
-    ["Auto Pet"] = "Tự Động Thú Cưng",
-    ["Auto"] = "Tự Động",
-    ["Steal"] = "Trộm",
-    ["Stealing"] = "Đang Trộm",
-    ["Collect"] = "Thu Thập",
-    ["Collecting"] = "Đang Thu",
-    ["Egg"] = "Trứng",
-    ["Eggs"] = "Trứng",
-    ["InstantSteal"] = "Trộm Tức Thì",
-    ["Instant Steal"] = "Trộm Tức Thì",
-    ["InstantStealV2"] = "Trộm Tức Thì V2",
-    ["Instant Steal V2"] = "Trộm Tức Thì V2",
-    ["Instant"] = "Tức Thì",
-    ["TeleportToEgg"] = "Dịch Chuyển Tới Trứng",
-    ["Teleport To Egg"] = "Dịch Chuyển Tới Trứng",
-    ["Teleport"] = "Dịch Chuyển",
-    ["TP"] = "Dịch Chuyển",
-    ["EggESP"] = "Hiện Vị Trí Trứng",
-    ["Egg ESP"] = "Hiện Vị Trí Trứng",
-    ["ESP"] = "ESP",
-    ["BringEgg"] = "Kéo Trứng",
-    ["Bring Egg"] = "Kéo Trứng",
-    ["GrabEgg"] = "Lấy Trứng",
-    ["Grab Egg"] = "Lấy Trứng",
-    ["EggInfo"] = "Thông Tin Trứng",
-    ["Egg Info"] = "Thông Tin Trứng",
-    ["EggValue"] = "Giá Trị Trứng",
-    ["Egg Value"] = "Giá Trị Trứng",
-    ["EggRarity"] = "Độ Hiếm Trứng",
-    ["Egg Rarity"] = "Độ Hiếm Trứng",
-    ["Zones"] = "Vùng",
-    ["Zone"] = "Vùng",
-    ["SellAll"] = "Bán Hết",
-    ["Sell All"] = "Bán Hết",
-    ["Sell"] = "Bán",
-    ["Selling"] = "Đang Bán",
-    ["BuyAll"] = "Mua Hết",
-    ["Buy All"] = "Mua Hết",
-    ["Buy"] = "Mua",
-    ["Pet"] = "Thú Cưng",
-    ["Pets"] = "Thú Cưng",
-    ["Equip"] = "Trang Bị",
-    ["EquipAll"] = "Trang Bị Hết",
-    ["Equip All"] = "Trang Bị Hết",
-    ["Unequip"] = "Gỡ",
-    ["Equipped"] = "Đã Trang Bị",
-    ["Inventory"] = "Túi Đồ",
-    ["Backpack"] = "Ba Lô",
-    ["Items"] = "Vật Phẩm",
-    ["Item"] = "Vật Phẩm",
-    ["Drop"] = "Thả",
-    ["DropAll"] = "Thả Hết",
-    ["Drop All"] = "Thả Hết",
-    ["Speed"] = "Tốc Độ",
-    ["SpeedBoost"] = "Tăng Tốc",
-    ["Speed Boost"] = "Tăng Tốc",
-    ["BoostSpeed"] = "Tốc Độ Boost",
-    ["Boost Speed"] = "Tốc Độ Boost",
-    ["WalkSpeed"] = "Tốc Độ Đi",
-    ["Walk Speed"] = "Tốc Độ Đi",
-    ["JumpPower"] = "Lực Nhảy",
-    ["Jump Power"] = "Lực Nhảy",
-    ["Jump"] = "Nhảy",
-    ["InfiniteJump"] = "Nhảy Vô Hạn",
-    ["Infinite Jump"] = "Nhảy Vô Hạn",
-    ["Fly"] = "Bay",
-    ["FlySpeed"] = "Tốc Độ Bay",
-    ["Fly Speed"] = "Tốc Độ Bay",
-    ["Noclip"] = "Xuyên Tường",
-    ["Infinite"] = "Vô Hạn",
-    ["GodMode"] = "Bất Tử",
-    ["God Mode"] = "Bất Tử",
-    ["Kill"] = "Giết",
-    ["Attack"] = "Tấn Công",
-    ["Damage"] = "Sát Thương",
-    ["Health"] = "Máu",
-    ["Aimbot"] = "Ngắm Tự Động",
-    ["Aim"] = "Ngắm",
-    ["SilentAim"] = "Ngắm Ngầm",
-    ["Silent Aim"] = "Ngắm Ngầm",
-    ["KeySystem"] = "Hệ Thống Key",
-    ["Key System"] = "Hệ Thống Key",
-    ["GetKey"] = "Lấy Key",
-    ["Get Key"] = "Lấy Key",
-    ["Key"] = "Key",
-    ["CopyLink"] = "Copy Liên Kết",
-    ["Copy Link"] = "Copy Liên Kết",
-    ["Link"] = "Liên Kết",
-    ["Check"] = "Kiểm Tra",
-    ["Checking"] = "Đang Kiểm Tra",
-    ["Verify"] = "Xác Minh",
-    ["Expired"] = "Hết Hạn",
-    ["Invalid"] = "Không Hợp Lệ",
-    ["Loading"] = "Đang Tải",
-    ["Loaded"] = "Đã Tải",
-    ["Success"] = "Thành Công",
-    ["Failed"] = "Thất Bại",
-    ["Error"] = "Lỗi",
-    ["Warning"] = "Cảnh Báo",
-    ["Execute"] = "Chạy",
-    ["Run"] = "Chạy",
-    ["Stop"] = "Dừng",
-    ["Start"] = "Bắt Đầu",
-    ["Pause"] = "Tạm Dừng",
-    ["Reset"] = "Đặt Lại",
-    ["Clear"] = "Xóa",
-    ["Delete"] = "Xóa",
-    ["Save"] = "Lưu",
-    ["Load"] = "Tải",
-    ["Refresh"] = "Làm Mới",
-    ["Update"] = "Cập Nhật",
-    ["Close"] = "Đóng",
-    ["Open"] = "Mở",
-    ["Minimize"] = "Thu Nhỏ",
-    ["Menu"] = "Menu",
-    ["GUI"] = "Giao Diện",
-    ["Theme"] = "Chủ Đề",
-    ["Color"] = "Màu",
-    ["Dark"] = "Tối",
-    ["Light"] = "Sáng",
-    ["Rainbow"] = "Cầu Vồng",
-    ["Toggle"] = "Công Tắc",
-    ["Slider"] = "Thanh Trượt",
-    ["Dropdown"] = "Danh Sách",
-    ["Search"] = "Tìm Kiếm",
-    ["Filter"] = "Lọc",
-    ["Hotkeys"] = "Phím Tắt",
-    ["Hotkey"] = "Phím Tắt",
-    ["Press"] = "Nhấn",
-    ["Click"] = "Bấm",
-    ["Select"] = "Chọn",
-    ["Selected"] = "Đã Chọn",
-    ["None"] = "Không",
-    ["All"] = "Tất Cả",
-    ["Default"] = "Mặc Định",
-    ["Custom"] = "Tùy Chỉnh",
-    ["JoinDiscord"] = "Vào Discord",
-    ["Join Discord"] = "Vào Discord",
-    ["Website"] = "Trang Web",
-    ["Rebirth"] = "Tái Sinh",
-    ["Rebirths"] = "Tái Sinh",
-    ["Coins"] = "Xu",
-    ["Cash"] = "Tiền",
-    ["Money"] = "Tiền",
-    ["Gems"] = "Đá Quý",
-    ["Level"] = "Cấp Độ",
-    ["XP"] = "Kinh Nghiệm",
-    ["Rank"] = "Xếp Hạng",
-    ["Leaderboard"] = "Bảng Xếp Hạng",
-    ["Stats"] = "Chỉ Số",
-    ["Value"] = "Giá Trị",
-    ["Rarity"] = "Độ Hiếm",
-    ["Common"] = "Thường",
-    ["Uncommon"] = "Ít Gặp",
-    ["Rare"] = "Hiếm",
-    ["Epic"] = "Cực Hiếm",
-    ["Legendary"] = "Huyền Thoại",
-    ["Mythical"] = "Thần Thoại",
-    ["Secret"] = "Bí Mật",
-    ["Event"] = "Sự Kiện",
-    ["Limited"] = "Giới Hạn",
-    ["Free"] = "Miễn Phí",
-    ["Premium"] = "Cao Cấp",
-    ["Trade"] = "Giao Dịch",
-    ["Gift"] = "Quà Tặng",
-    ["Reward"] = "Phần Thưởng",
-    ["Daily"] = "Hàng Ngày",
-    ["Quest"] = "Nhiệm Vụ",
-    ["Mission"] = "Nhiệm Vụ",
-    ["Complete"] = "Hoàn Thành",
-    ["Completed"] = "Đã Hoàn Thành",
-    ["RacingEvent"] = "Sự Kiện Đua",
-    ["Racing Event"] = "Sự Kiện Đua",
-    ["Racing Sự Kiện"] = "Sự Kiện Đua",
-    ["ShootingStar"] = "Sao Băng",
-    ["Shooting Star"] = "Sao Băng",
-    ["ButterflyBloom"] = "Butterfly Bloom",
-    ["Butterfly Bloom"] = "Butterfly Bloom",
-    ["WispCompanion"] = "Wisp Companion",
-    ["Wisp Companion"] = "Wisp Companion",
-    ["DrScrambleLab"] = "Phòng Thí Nghiệm Dr Scramble",
-    ["Dr Scramble Lab"] = "Phòng Thí Nghiệm Dr Scramble",
-    ["EggHunt"] = "Săn Trứng",
-    ["Egg Hunt"] = "Săn Trứng",
-    ["Raid"] = "Đột Kích",
-    ["Boss"] = "Trùm",
-    ["AntiGuard"] = "Chống Bảo Vệ",
-    ["Anti Guard"] = "Chống Bảo Vệ",
-    ["Guard"] = "Bảo Vệ",
-    ["selected"] = "đã chọn",
-    ["Enabled"] = "Đã Bật",
-    ["Disabled"] = "Đã Tắt",
-    ["On"] = "Bật",
-    ["Off"] = "Tắt",
-    ["Yes"] = "Có",
-    ["No"] = "Không",
-    ["Exit"] = "Thoát",
-    ["Quit"] = "Thoát",
-    ["Cancel"] = "Hủy",
-    ["Confirm"] = "Xác Nhận",
-    ["Apply"] = "Áp Dụng",
-    ["OK"] = "OK",
-    ["FPS"] = "FPS",
-    ["Ping"] = "Ping",
-    ["Time"] = "Thời Gian",
-    ["Status"] = "Trạng Thái",
-    ["Info"] = "Thông Tin",
-    ["Version"] = "Phiên Bản",
-    ["Author"] = "Tác Giả",
+local D = {
+    ["auto"]="tự động",["steal"]="trộm",["collect"]="thu",["collecting"]="đang thu",
+    ["sell"]="bán",["selling"]="đang bán",["buy"]="mua",["buying"]="đang mua",
+    ["equip"]="trang bị",["unequip"]="gỡ",["equipped"]="đã trang bị",
+    ["drop"]="thả",["use"]="dùng",["using"]="đang dùng",["open"]="mở",["opening"]="đang mở",
+    ["close"]="đóng",["closing"]="đang đóng",["start"]="bắt đầu",["stop"]="dừng",
+    ["pause"]="tạm dừng",["resume"]="tiếp tục",["reset"]="đặt lại",["clear"]="xóa",
+    ["delete"]="xóa",["save"]="lưu",["load"]="tải",["loading"]="đang tải",
+    ["loaded"]="đã tải",["refresh"]="làm mới",["update"]="cập nhật",
+    ["check"]="kiểm tra",["checking"]="đang kiểm tra",["verify"]="xác minh",
+    ["run"]="chạy",["running"]="đang chạy",["execute"]="chạy",["enable"]="bật",
+    ["enabled"]="đã bật",["disable"]="tắt",["disabled"]="đã tắt",["toggle"]="công tắc",
+    ["select"]="chọn",["selected"]="đã chọn",["press"]="nhấn",["click"]="bấm",
+    ["copy"]="sao chép",["paste"]="dán",["send"]="gửi",["fetch"]="lấy",
+    ["get"]="lấy",["set"]="đặt",["apply"]="áp dụng",["confirm"]="xác nhận",
+    ["cancel"]="hủy",["exit"]="thoát",["quit"]="thoát",["try"]="thử",
+    ["retry"]="thử lại",["wait"]="đợi",["waiting"]="đang đợi",
+
+    ["instant"]="tức thì",["teleport"]="dịch chuyển",["tp"]="dịch chuyển",
+    ["fly"]="bay",["noclip"]="xuyên tường",["infinite"]="vô hạn",
+    ["godmode"]="bất tử",["god"]="thần",["mode"]="chế độ",["kill"]="giết",
+    ["attack"]="tấn công",["hit"]="đánh",["damage"]="sát thương",
+    ["health"]="máu",["hp"]="máu",["speed"]="tốc độ",["boost"]="tăng",
+    ["jump"]="nhảy",["jumppower"]="lực nhảy",["walkspeed"]="tốc độ đi",
+    ["bring"]="kéo",["grab"]="lấy",["zones"]="vùng",["zone"]="vùng",
+
+    ["farm"]="cày",["player"]="người chơi",["players"]="người chơi",
+    ["predictor"]="dự đoán",["prediction"]="dự đoán",["progress"]="tiến độ",
+    ["server"]="máy chủ",["servers"]="máy chủ",["misc"]="khác",
+    ["extra"]="thêm",["main"]="chính",["home"]="trang chủ",
+    ["admin"]="quản trị",["abuse"]="lạm dụng",["settings"]="cài đặt",
+    ["config"]="cấu hình",["configs"]="cấu hình",["options"]="tùy chọn",
+    ["option"]="tùy chọn",["script"]="kịch bản",["scripts"]="kịch bản",
+    ["menu"]="menu",["gui"]="giao diện",["ui"]="giao diện",
+    ["theme"]="chủ đề",["color"]="màu",["colors"]="màu sắc",
+    ["dark"]="tối",["light"]="sáng",["rainbow"]="cầu vồng",
+    ["visual"]="hiển thị",["visuals"]="hiển thị",["esp"]="hiện vị trí",
+    ["aimbot"]="ngắm tự động",["aim"]="ngắm",["silent"]="ngầm",
+    ["hotkey"]="phím tắt",["hotkeys"]="phím tắt",["keybind"]="phím gán",
+    ["search"]="tìm kiếm",["filter"]="lọc",["sort"]="sắp xếp",
+    ["quick"]="nhanh",["bar"]="thanh",["slider"]="thanh trượt",
+    ["dropdown"]="danh sách",["none"]="không",["all"]="tất cả",
+    ["default"]="mặc định",["custom"]="tùy chỉnh",
+
+    ["egg"]="trứng",["eggs"]="trứng",["pet"]="thú cưng",["pets"]="thú cưng",
+    ["inventory"]="túi đồ",["backpack"]="ba lô",["item"]="vật phẩm",
+    ["items"]="vật phẩm",["storage"]="kho",["locker"]="tủ",
+    ["enemy"]="kẻ địch",["enemies"]="kẻ địch",
+    ["friend"]="bạn",["friends"]="bạn bè",["team"]="đội",["boss"]="trùm",
+    ["guard"]="bảo vệ",["guards"]="bảo vệ",["npc"]="npc",
+    ["quest"]="nhiệm vụ",["quests"]="nhiệm vụ",["mission"]="nhiệm vụ",
+    ["task"]="nhiệm vụ",["daily"]="hàng ngày",["reward"]="phần thưởng",
+    ["rewards"]="phần thưởng",["gift"]="quà",["trade"]="giao dịch",
+    ["trading"]="giao dịch",["shop"]="cửa hàng",["store"]="cửa hàng",
+
+    ["success"]="thành công",["successfully"]="thành công",
+    ["failed"]="thất bại",["fail"]="thất bại",["error"]="lỗi",
+    ["warning"]="cảnh báo",["notice"]="thông báo",["info"]="thông tin",
+    ["invalid"]="không hợp lệ",["valid"]="hợp lệ",["expired"]="hết hạn",
+    ["ready"]="sẵn sàng",["active"]="hoạt động",
+    ["inactive"]="không hoạt động",["true"]="bật",["false"]="tắt",
+    ["yes"]="có",["no"]="không",["on"]="bật",["off"]="tắt",
+    ["level"]="cấp độ",["xp"]="kinh nghiệm",["exp"]="kinh nghiệm",
+    ["rank"]="xếp hạng",["stats"]="chỉ số",["stat"]="chỉ số",
+    ["value"]="giá trị",["rarity"]="độ hiếm",["coins"]="xu",
+    ["cash"]="tiền",["money"]="tiền",["gems"]="đá quý",["gem"]="đá quý",
+    ["rebirth"]="tái sinh",["rebirths"]="tái sinh",
+
+    ["common"]="thường",["uncommon"]="ít gặp",["rare"]="hiếm",
+    ["epic"]="cực hiếm",["legendary"]="huyền thoại",["mythical"]="thần thoại",
+    ["secret"]="bí mật",["limited"]="giới hạn",["event"]="sự kiện",
+    ["free"]="miễn phí",["premium"]="cao cấp",["vip"]="vip",
+
+    ["key"]="khóa",["key system"]="hệ thống khóa",["get key"]="lấy khóa",
+    ["link"]="liên kết",["copy link"]="sao chép liên kết",
+    ["discord"]="discord",["youtube"]="youtube",["website"]="trang web",
+    ["join"]="tham gia",["join discord"]="vào discord",
+    ["please"]="vui lòng",["please wait"]="vui lòng đợi",
+    ["wait..."]="đợi...",["loading..."]="đang tải...",
+
+    ["butterfly"]="bướm",["bloom"]="nở",["wisp"]="linh hồn",
+    ["companion"]="đồng hành",["scramble"]="xáo trộn",["lab"]="phòng thí nghiệm",
+    ["shooting"]="bắn",["star"]="sao",["racing"]="đua",
+    ["hunt"]="săn",["raid"]="đột kích",["anti"]="chống",
+    ["speed boost"]="tăng tốc",["boost speed"]="tốc độ tăng",
 }
 
 local function translate(text)
     if not text or text == "" then return text end
-    local exact = T[text]
-    if exact then return exact end
+    
+    -- Đổi Chilli → TLN CHEAT (không phân biệt hoa thường)
+    text = text:gsub("[Cc][Hh][Ii][Ll][Ll][Ii]%s*[Hh][Uu][Bb]", "TLN CHEAT")
+    text = text:gsub("[Cc][Hh][Ii][Ll][Ll][Ii]", "TLN CHEAT")
+    
     if #text > 80 then return text end
+    
     local lower = text:lower()
-    for en, vi in pairs(T) do
-        if #en > 2 and lower:find(en:lower(), 1, true) then
-            local s, e = lower:find(en:lower(), 1, true)
-            if s then
-                text = text:sub(1, s - 1) .. vi .. text:sub(e + 1)
-                lower = text:lower()
-            end
+    local result = text
+    local keys = {}
+    for k in pairs(D) do table.insert(keys, k) end
+    table.sort(keys, function(a, b) return #a > #b end)
+    for _, en in ipairs(keys) do
+        local vi = D[en]
+        local s, e = lower:find(en, 1, true)
+        if s then
+            result = result:sub(1, s - 1) .. vi .. result:sub(e + 1)
+            lower = result:lower()
         end
     end
-    return text
+    if text:sub(1,1):match("%u") and result:sub(1,1):match("%l") then
+        result = result:sub(1,1):upper() .. result:sub(2)
+    end
+    return result
 end
 
 local translated = setmetatable({}, {__mode = "k"})
@@ -317,9 +158,73 @@ local function viethoa(root)
     scan(root)
 end
 
--- Load Chilli
 task.spawn(function()
     local ok, source = pcall(function() return game:HttpGet(CHILLI) end)
+    if not ok or not source or #source == 0 then return end
+    local chunk = loadstring(source)
+    if chunk then pcall(chunk) end
+end)
+
+task.spawn(function()
+    task.wait(0.5)
+    for _, v in ipairs({CoreGui, LP:FindFirstChild("PlayerGui")}) do
+        if v then
+            for _, c in ipairs(v:GetChildren()) do
+                if c.Name == "TLN_WATERMARK" or c.Name == "TLN_WM" or c.Name == "TLN_TikTokTag" then
+                    c:Destroy()
+                end
+            end
+        end
+    end
+end)
+
+task.spawn(function()
+    task.wait(0.5)
+    local tagGui = Instance.new("ScreenGui")
+    tagGui.Name = "TLN_TikTokTag"
+    tagGui.ResetOnSpawn = false
+    tagGui.IgnoreGuiInset = true
+    tagGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    local ok = pcall(function() tagGui.Parent = CoreGui end)
+    if not ok then pcall(function() tagGui.Parent = LP:WaitForChild("PlayerGui", 3) end) end
+
+    local lbl = Instance.new("TextLabel", tagGui)
+    lbl.Size = UDim2.new(0, 260, 0, 26)
+    lbl.Position = UDim2.new(0.5, -130, 0, 6)
+    lbl.BackgroundColor3 = Color3.fromRGB(15, 15, 23)
+    lbl.BackgroundTransparency = 0.15
+    lbl.Text = "TIKTOK: hetcuu83"
+    lbl.TextColor3 = Color3.fromRGB(255, 255, 255)
+    lbl.TextSize = 14
+    lbl.Font = Enum.Font.GothamBlack
+    lbl.BorderSizePixel = 0
+    lbl.ZIndex = 999
+    Instance.new("UICorner", lbl).CornerRadius = UDim.new(0, 8)
+    local stroke = Instance.new("UIStroke", lbl)
+    stroke.Color = Color3.fromRGB(255, 45, 85)
+    stroke.Thickness = 1.5
+    local grad = Instance.new("UIGradient", lbl)
+    grad.Color = ColorSequence.new({
+        ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 210, 220)),
+        ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 90, 120))
+    })
+end)
+
+task.spawn(function()
+    task.wait(2)
+    viethoa(CoreGui)
+    local pg = LP:FindFirstChild("PlayerGui")
+    if pg then viethoa(pg) end
+    task.wait(1.5)
+    viethoa(CoreGui)
+    if pg then viethoa(pg) end
+    task.wait(2)
+    viethoa(CoreGui)
+    if pg then viethoa(pg) end
+    task.wait(3)
+    viethoa(CoreGui)
+    if pg then viethoa(pg) end
+end)ion() return game:HttpGet(CHILLI) end)
     if not ok or not source or #source == 0 then return end
     local chunk = loadstring(source)
     if chunk then pcall(chunk) end
