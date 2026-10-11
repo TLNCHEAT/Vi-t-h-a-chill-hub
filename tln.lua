@@ -10,101 +10,127 @@ local CHILLI = "https://raw.githubusercontent.com/tienkhanh1/spicy/main/Chilli.l
 local LOGO = "https://cdn.upanhlaylink.com/i/l0hK1aFq.png"
 
 local D = {
+    -- Hành động
     ["auto"]="tự động",["steal"]="trộm",["collect"]="thu",["collecting"]="đang thu",
     ["sell"]="bán",["selling"]="đang bán",["buy"]="mua",["buying"]="đang mua",
     ["equip"]="trang bị",["unequip"]="gỡ",["equipped"]="đã trang bị",
     ["drop"]="thả",["use"]="dùng",["using"]="đang dùng",["open"]="mở",["opening"]="đang mở",
-    ["close"]="đóng",["closing"]="đang đóng",["start"]="bắt đầu",["stop"]="dừng",
-    ["pause"]="tạm dừng",["resume"]="tiếp tục",["reset"]="đặt lại",["clear"]="xóa",
-    ["delete"]="xóa",["save"]="lưu",["load"]="tải",["loading"]="đang tải",
-    ["loaded"]="đã tải",["refresh"]="làm mới",["update"]="cập nhật",
+    ["close"]="đóng",["closing"]="đang đóng",["start"]="bắt đầu",["started"]="đã bắt đầu",
+    ["stop"]="dừng",["stopped"]="đã dừng",["pause"]="tạm dừng",["paused"]="đã tạm dừng",
+    ["resume"]="tiếp tục",["reset"]="đặt lại",["clear"]="xóa",["delete"]="xóa",
+    ["save"]="lưu",["load"]="tải",["loading"]="đang tải",["loaded"]="đã tải",
+    ["refresh"]="làm mới",["update"]="cập nhật",["updating"]="đang cập nhật",
     ["check"]="kiểm tra",["checking"]="đang kiểm tra",["verify"]="xác minh",
-    ["run"]="chạy",["running"]="đang chạy",["execute"]="chạy",["enable"]="bật",
-    ["enabled"]="đã bật",["disable"]="tắt",["disabled"]="đã tắt",["toggle"]="công tắc",
+    ["verifying"]="đang xác minh",["run"]="chạy",["running"]="đang chạy",
+    ["execute"]="chạy",["enable"]="bật",["enabled"]="đã bật",
+    ["disable"]="tắt",["disabled"]="đã tắt",["toggle"]="công tắc",
     ["select"]="chọn",["selected"]="đã chọn",["press"]="nhấn",["click"]="bấm",
     ["copy"]="sao chép",["paste"]="dán",["send"]="gửi",["fetch"]="lấy",
     ["get"]="lấy",["set"]="đặt",["apply"]="áp dụng",["confirm"]="xác nhận",
     ["cancel"]="hủy",["exit"]="thoát",["quit"]="thoát",["try"]="thử",
-    ["retry"]="thử lại",["wait"]="đợi",["waiting"]="đang đợi",
+    ["retry"]="thử lại",["wait"]="đợi",["waiting"]="đang đợi",["done"]="xong",
+    ["finish"]="hoàn thành",["finished"]="đã hoàn thành",["complete"]="hoàn thành",
+    ["completed"]="đã hoàn thành",["progress"]="tiến độ",["back"]="quay lại",
+    ["next"]="tiếp",["previous"]="trước",
 
+    -- Chức năng
     ["instant"]="tức thì",["teleport"]="dịch chuyển",["tp"]="dịch chuyển",
-    ["fly"]="bay",["noclip"]="xuyên tường",["infinite"]="vô hạn",
-    ["godmode"]="bất tử",["god"]="thần",["mode"]="chế độ",["kill"]="giết",
-    ["attack"]="tấn công",["hit"]="đánh",["damage"]="sát thương",
-    ["health"]="máu",["hp"]="máu",["speed"]="tốc độ",["boost"]="tăng",
+    ["fly"]="bay",["flying"]="đang bay",["noclip"]="xuyên tường",
+    ["infinite"]="vô hạn",["godmode"]="bất tử",["god"]="thần",
+    ["mode"]="chế độ",["kill"]="giết",["killing"]="đang giết",
+    ["attack"]="tấn công",["attacking"]="đang tấn công",["hit"]="đánh",
+    ["damage"]="sát thương",["health"]="máu",["hp"]="máu",
+    ["speed"]="tốc độ",["boost"]="tăng",["boosted"]="đã tăng",
     ["jump"]="nhảy",["jumppower"]="lực nhảy",["walkspeed"]="tốc độ đi",
-    ["bring"]="kéo",["grab"]="lấy",["zones"]="vùng",["zone"]="vùng",
+    ["bring"]="kéo",["bringed"]="đã kéo",["grab"]="lấy",
+    ["zones"]="vùng",["zone"]="vùng",["region"]="khu vực",
 
-    ["farm"]="cày",["player"]="người chơi",["players"]="người chơi",
-    ["predictor"]="dự đoán",["prediction"]="dự đoán",["progress"]="tiến độ",
+    -- Danh mục
+    ["farm"]="cày",["farming"]="đang cày",["player"]="người chơi",
+    ["players"]="người chơi",["predictor"]="dự đoán",["prediction"]="dự đoán",
     ["server"]="máy chủ",["servers"]="máy chủ",["misc"]="khác",
     ["extra"]="thêm",["main"]="chính",["home"]="trang chủ",
     ["admin"]="quản trị",["abuse"]="lạm dụng",["settings"]="cài đặt",
-    ["config"]="cấu hình",["configs"]="cấu hình",["options"]="tùy chọn",
-    ["option"]="tùy chọn",["script"]="kịch bản",["scripts"]="kịch bản",
-    ["menu"]="menu",["gui"]="giao diện",["ui"]="giao diện",
-    ["theme"]="chủ đề",["color"]="màu",["colors"]="màu sắc",
-    ["dark"]="tối",["light"]="sáng",["rainbow"]="cầu vồng",
-    ["visual"]="hiển thị",["visuals"]="hiển thị",["esp"]="hiện vị trí",
-    ["aimbot"]="ngắm tự động",["aim"]="ngắm",["silent"]="ngầm",
-    ["hotkey"]="phím tắt",["hotkeys"]="phím tắt",["keybind"]="phím gán",
-    ["search"]="tìm kiếm",["filter"]="lọc",["sort"]="sắp xếp",
-    ["quick"]="nhanh",["bar"]="thanh",["slider"]="thanh trượt",
-    ["dropdown"]="danh sách",["none"]="không",["all"]="tất cả",
-    ["default"]="mặc định",["custom"]="tùy chỉnh",
+    ["setting"]="cài đặt",["config"]="cấu hình",["configs"]="cấu hình",
+    ["options"]="tùy chọn",["option"]="tùy chọn",["script"]="kịch bản",
+    ["scripts"]="kịch bản",["menu"]="menu",["gui"]="giao diện",
+    ["ui"]="giao diện",["theme"]="chủ đề",["color"]="màu",
+    ["colors"]="màu sắc",["dark"]="tối",["light"]="sáng",
+    ["rainbow"]="cầu vồng",["visual"]="hiển thị",["visuals"]="hiển thị",
+    ["esp"]="hiện vị trí",["aimbot"]="ngắm tự động",["aim"]="ngắm",
+    ["silent"]="ngầm",["hotkey"]="phím tắt",["hotkeys"]="phím tắt",
+    ["keybind"]="phím gán",["search"]="tìm kiếm",["filter"]="lọc",
+    ["sort"]="sắp xếp",["quick"]="nhanh",["bar"]="thanh",
+    ["slider"]="thanh trượt",["dropdown"]="danh sách",["none"]="không",
+    ["all"]="tất cả",["default"]="mặc định",["custom"]="tùy chỉnh",
+    ["current"]="hiện tại",["total"]="tổng",["count"]="số lượng",
 
+    -- Đối tượng
     ["egg"]="trứng",["eggs"]="trứng",["pet"]="thú cưng",["pets"]="thú cưng",
     ["inventory"]="túi đồ",["backpack"]="ba lô",["item"]="vật phẩm",
     ["items"]="vật phẩm",["storage"]="kho",["locker"]="tủ",
-    ["enemy"]="kẻ địch",["enemies"]="kẻ địch",
-    ["friend"]="bạn",["friends"]="bạn bè",["team"]="đội",["boss"]="trùm",
+    ["enemy"]="kẻ địch",["enemies"]="kẻ địch",["friend"]="bạn",
+    ["friends"]="bạn bè",["team"]="đội",["boss"]="trùm",
     ["guard"]="bảo vệ",["guards"]="bảo vệ",["npc"]="npc",
     ["quest"]="nhiệm vụ",["quests"]="nhiệm vụ",["mission"]="nhiệm vụ",
-    ["task"]="nhiệm vụ",["daily"]="hàng ngày",["reward"]="phần thưởng",
-    ["rewards"]="phần thưởng",["gift"]="quà",["trade"]="giao dịch",
+    ["missions"]="nhiệm vụ",["task"]="nhiệm vụ",["tasks"]="nhiệm vụ",
+    ["daily"]="hàng ngày",["reward"]="phần thưởng",["rewards"]="phần thưởng",
+    ["gift"]="quà",["gifts"]="quà",["trade"]="giao dịch",
     ["trading"]="giao dịch",["shop"]="cửa hàng",["store"]="cửa hàng",
+    ["chest"]="rương",["chests"]="rương",["box"]="hộp",["boxes"]="hộp",
 
+    -- Trạng thái
     ["success"]="thành công",["successfully"]="thành công",
-    ["failed"]="thất bại",["fail"]="thất bại",["error"]="lỗi",
-    ["warning"]="cảnh báo",["notice"]="thông báo",["info"]="thông tin",
+    ["failed"]="thất bại",["fail"]="thất bại",["failure"]="thất bại",
+    ["error"]="lỗi",["errors"]="lỗi",["warning"]="cảnh báo",
+    ["notice"]="thông báo",["info"]="thông tin",["information"]="thông tin",
     ["invalid"]="không hợp lệ",["valid"]="hợp lệ",["expired"]="hết hạn",
-    ["ready"]="sẵn sàng",["active"]="hoạt động",
+    ["expire"]="hết hạn",["ready"]="sẵn sàng",["active"]="hoạt động",
     ["inactive"]="không hoạt động",["true"]="bật",["false"]="tắt",
     ["yes"]="có",["no"]="không",["on"]="bật",["off"]="tắt",
+    ["loading..."]="đang tải...",["wait..."]="đợi...",
+
+    -- Stats
     ["level"]="cấp độ",["xp"]="kinh nghiệm",["exp"]="kinh nghiệm",
     ["rank"]="xếp hạng",["stats"]="chỉ số",["stat"]="chỉ số",
     ["value"]="giá trị",["rarity"]="độ hiếm",["coins"]="xu",
-    ["cash"]="tiền",["money"]="tiền",["gems"]="đá quý",["gem"]="đá quý",
-    ["rebirth"]="tái sinh",["rebirths"]="tái sinh",
+    ["coin"]="xu",["cash"]="tiền",["money"]="tiền",["gems"]="đá quý",
+    ["gem"]="đá quý",["rebirth"]="tái sinh",["rebirths"]="tái sinh",
 
+    -- Độ hiếm
     ["common"]="thường",["uncommon"]="ít gặp",["rare"]="hiếm",
     ["epic"]="cực hiếm",["legendary"]="huyền thoại",["mythical"]="thần thoại",
     ["secret"]="bí mật",["limited"]="giới hạn",["event"]="sự kiện",
     ["free"]="miễn phí",["premium"]="cao cấp",["vip"]="vip",
 
+    -- Key / Social
     ["key"]="khóa",["key system"]="hệ thống khóa",["get key"]="lấy khóa",
     ["link"]="liên kết",["copy link"]="sao chép liên kết",
     ["discord"]="discord",["youtube"]="youtube",["website"]="trang web",
     ["join"]="tham gia",["join discord"]="vào discord",
     ["please"]="vui lòng",["please wait"]="vui lòng đợi",
-    ["wait..."]="đợi...",["loading..."]="đang tải...",
 
+    -- Đặc thù Steal a Egg
     ["butterfly"]="bướm",["bloom"]="nở",["wisp"]="linh hồn",
     ["companion"]="đồng hành",["scramble"]="xáo trộn",["lab"]="phòng thí nghiệm",
     ["shooting"]="bắn",["star"]="sao",["racing"]="đua",
     ["hunt"]="săn",["raid"]="đột kích",["anti"]="chống",
     ["speed boost"]="tăng tốc",["boost speed"]="tốc độ tăng",
+    ["instant steal"]="trộm tức thì",["instant steal v2"]="trộm tức thì v2",
+    ["teleport to egg"]="dịch chuyển tới trứng",
+    ["egg esp"]="hiện vị trí trứng",["bring egg"]="kéo trứng",
+    ["egg info"]="thông tin trứng",["egg value"]="giá trị trứng",
+    ["egg rarity"]="độ hiếm trứng",["egg hunt"]="săn trứng",
+    ["anti guard"]="chống bảo vệ",["admin abuse"]="quyền admin",
+    ["quick & keys"]="phím tắt",["quick & key"]="phím tắt",
 }
 
 local function translate(text)
     if not text or text == "" then return text end
-    
     -- Đổi Chilli → TLN CHEAT (không phân biệt hoa thường)
     text = text:gsub("[Cc][Hh][Ii][Ll][Ll][Ii]%s*[Hh][Uu][Bb]", "TLN CHEAT")
     text = text:gsub("[Cc][Hh][Ii][Ll][Ll][Ii]", "TLN CHEAT")
-    
     if #text > 80 then return text end
-    
     local lower = text:lower()
     local result = text
     local keys = {}
@@ -158,6 +184,7 @@ local function viethoa(root)
     scan(root)
 end
 
+-- Load Chilli
 task.spawn(function()
     local ok, source = pcall(function() return game:HttpGet(CHILLI) end)
     if not ok or not source or #source == 0 then return end
@@ -165,6 +192,7 @@ task.spawn(function()
     if chunk then pcall(chunk) end
 end)
 
+-- Xóa watermark cũ
 task.spawn(function()
     task.wait(0.5)
     for _, v in ipairs({CoreGui, LP:FindFirstChild("PlayerGui")}) do
@@ -178,6 +206,7 @@ task.spawn(function()
     end
 end)
 
+-- Tag TIKTOK
 task.spawn(function()
     task.wait(0.5)
     local tagGui = Instance.new("ScreenGui")
@@ -210,6 +239,7 @@ task.spawn(function()
     })
 end)
 
+-- Quét dịch + đổi logo
 task.spawn(function()
     task.wait(2)
     viethoa(CoreGui)
@@ -223,6 +253,8 @@ task.spawn(function()
     if pg then viethoa(pg) end
     task.wait(3)
     viethoa(CoreGui)
+    if pg then viethoa(pg) end
+end)viethoa(CoreGui)
     if pg then viethoa(pg) end
 end)ion() return game:HttpGet(CHILLI) end)
     if not ok or not source or #source == 0 then return end
